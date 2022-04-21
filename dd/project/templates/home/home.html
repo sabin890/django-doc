@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+        color: brown;
+    }
+</style>
+<body>
+    {% comment %} {% if tm %}
+    <h1>This is {{tm}}</h1>
+    <h1>This is {{tm|time:'h:i'}}</h1>
+    {% endif %} {% endcomment %}
+    {% comment %} {% if tm == 'django' %}
+    <h2>hello {{tm}}</h2>
+    {% else %}
+    <h2>NO contend</h2>
+    {% endif %} {% endcomment %}
+    {% comment %} <ul>
+    {% for name in names %}
+   <li> {{ name }}</li>
+   {% empty %}
+   <h3>No names</h3>
+    {% endfor %}
+    </ul> {% endcomment %}
+    {% for key, value  in student.items %}
+    {% for k, v in value.items %}
+    {{k}} = {{v}}<br>
+    {% endfor %}
+    {% endfor %}
+    

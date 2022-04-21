@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: black;
+            color: blanchedalmond;
+        }
+    .errorlist{
+        list-style: none;
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {{me.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'pg1' %}">student - 1 </a><br>
+    <a href="{% url 'page2' 1 %}">student - 2 </a><br>
+    <a href="{% url 'page2' 2 %}">student - 3 </a><br>
+    <a href="{% url 'page2' 3 %}">student - 4 </a><br>
+</body>
+</html>

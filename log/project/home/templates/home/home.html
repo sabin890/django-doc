@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+            {% endif %}
+            {% for fm in me %}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br><br>
+            {% endfor %}
+            <input type="submit" value="Submit">
+            <a href="{% url 'login' %}" class="btn btn-success">Log In</a><br>
+            <!-- <a href="{% url 'pass' %}" class="btn btn-success">Password Change</a> -->
+
+        </form>
+    {% if messages %}
+    {% for massage in messages %}
+    <small {% if message.tags %} class="{{massage.tags}}" {% endif %}>{{massage}}</small>
+    {% endfor %}
+    {% endif %}
+</body>
+
+</html>

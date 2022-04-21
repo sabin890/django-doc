@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+            color: blanchedalmond;
+            border: 1px blanchedalmond left;
+        }
+    </style>
+    <!-- {{stu}} <br>
+     -->
+    {% for i in stu %}
+    {{i.stuid}}<br>
+    {{i.stuname}}<br>
+    {{i.stuemail}}<br>
+    {{i.stupass}}<br>
+    {% endfor %}
+     <h3>hello This is home</h3>
+</body>
+</html>
